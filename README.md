@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## DB diagram
+<img src="https://github.com/Rodrigo-lpds/movie_catalog/blob/main/model_diagram.png?raw=true">
