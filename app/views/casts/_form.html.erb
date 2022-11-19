@@ -1,0 +1,27 @@
+<%= form_with(model: cast) do |form| %>
+  <% if cast.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cast.errors.count, "error") %> prohibited this cast from being saved:</h2>
+
+      <ul>
+        <% cast.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :movie_id, style: "display: block" %>
+    <%= form.text_field :movie_id %>
+  </div>
+
+  <div>
+    <%= form.label :actor_id, style: "display: block" %>
+    <%= form.text_field :actor_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

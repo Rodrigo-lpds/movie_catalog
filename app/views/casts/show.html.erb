@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cast %>
+
+<div>
+  <%= link_to "Edit this cast", edit_cast_path(@cast) %> |
+  <%= link_to "Back to casts", casts_path %>
+
+  <%= button_to "Destroy this cast", @cast, method: :delete %>
+</div>
