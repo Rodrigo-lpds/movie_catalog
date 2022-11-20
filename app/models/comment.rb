@@ -1,6 +1,12 @@
 class Comment < ApplicationRecord
+  after_update :save_to_logs
+
   validates :text, presence: true
   belongs_to :movie
 
-  scope :approved_comments, -> { where(status: true) }
+  scope :not_approved_comments, -> { where(status: false) }
+
+  def save_to_logs
+    Log.create(approved_date: Time.now.strftime('%d-%m-%Y'), comment_id: id) if status == true
+  end
 end

@@ -2,9 +2,10 @@
 
 <%= render @comment %>
 
-<div>
-  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
+<div> |
   <%= link_to "Back to comments", comments_path %>
-
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <%= form_with(model: @comment) do |form| %>
+   <%=  form.hidden_field :status, value: true %>   
+    <%= form.submit "Aprovar Comentário"%>
+  <% end %>
 </div>

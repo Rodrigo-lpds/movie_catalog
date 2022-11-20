@@ -4,7 +4,15 @@
 
 <div id="logs">
    <% @logs.each do |log| %>
-    <%= render log %>
+        <div>
+            <p>Comentário: <%= log.comment.text.truncate(40)%></p>
+            <p> Aprovado na data:
+                <%= log.approved_date %>
+            <p>
+            <p> Comentário do filme:
+                <%= log.comment.movie.title %>
+            </p>
+        </div>
     <% end %>
 </div>
 

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
 
   def index
-    @comments = Comment.approved_comments
+    @comments = Comment.not_approved_comments
   end
 
   def show; end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comment_url(@comment), notice: 'Comment was successfully created.' }
+        format.html { redirect_to comments_path, notice: 'Comentário foi aprovado com sucesso.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
