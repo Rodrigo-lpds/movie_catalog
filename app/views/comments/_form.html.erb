@@ -26,6 +26,14 @@
     <%= form.text_field :movie_id %>
   </div>
 
+ <select name= "select">
+  <% @movies.all.each do |movie| %>
+    <option value= "<%= movie_id %>">
+    <%= movie.name %>
+    <option>
+    <% end %>
+  </select>
+
   <div>
     <%= form.submit %>
   </div>
