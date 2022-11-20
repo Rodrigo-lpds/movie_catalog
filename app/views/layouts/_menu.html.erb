@@ -1,6 +1,13 @@
 <header>
-    <a href = "/movies">Filmes</a>
-    <a href = "/actors">Atores</a>
-    <a href = "/comments">Comentarios</a>
-    <a href = "/logs">Logs</a>
+    <nav>
+        <%= link_to "Filmes", movies_path %>
+        <%= link_to "Atores", actors_path %>
+        <%= link_to "Comentários", comments_path %>
+        <%= link_to "Logs", logs_path %>
+    </nav>
  </header>
+<style>
+    nav {
+        gap:2rem;
+    }
+</style>
