@@ -4,8 +4,8 @@
 <%= render @movie %>
 
 <h3> Comentários do Filme: </h3>
-<% @movie.comments.approved_comments.each do |comment| %>
-  <h4> Comentário: </h4>
+<% @movie.comments.approved_comments.each_with_index do |comment, index| %>
+  <h4> Comentário n°<%= index %>: </h4>
   <p> <%= comment.text %> </p>
   
 <% end %>

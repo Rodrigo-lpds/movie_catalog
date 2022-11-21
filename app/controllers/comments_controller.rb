@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to comments_url, notice: 'Comentário foi deletado com sucesso.' }
     end
   end
 
