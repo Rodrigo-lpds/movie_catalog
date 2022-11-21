@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Filmes</h1>
+<%= link_to "Adicionar novo Filme", new_movie_path %>  
 
 <div id="movies">
   <% @movies.each do |movie| %>
@@ -11,4 +12,3 @@
   <% end %>
 </div>
 
-<%= link_to "Adicionar Filme", new_movie_path %>
