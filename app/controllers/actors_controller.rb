@@ -18,7 +18,7 @@ class ActorsController < ApplicationController
 
     respond_to do |format|
       if @actor.save
-        format.html { redirect_to actor_url(@actor), notice: 'Actor was successfully created.' }
+        format.html { redirect_to actor_url(@actor), notice: 'Ator foi criado com sucesso.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -28,7 +28,7 @@ class ActorsController < ApplicationController
   def update
     respond_to do |format|
       if @actor.update(actor_params)
-        format.html { redirect_to actor_url(@actor), notice: 'Actor was successfully updated.' }
+        format.html { redirect_to actor_url(@actor), notice: 'Ator foi atualizado com sucesso' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -39,7 +39,7 @@ class ActorsController < ApplicationController
     @actor.destroy
 
     respond_to do |format|
-      format.html { redirect_to actors_url, notice: 'Actor was successfully destroyed.' }
+      format.html { redirect_to actors_url, notice: 'Ator foi deletado com sucesso' }
     end
   end
 

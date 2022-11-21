@@ -1,13 +1,20 @@
 <header>
     <nav>
-        <%= link_to "Filmes", movies_path %>
-        <%= link_to "Atores", actors_path %>
-        <%= link_to "Comentários", comments_path %>
-        <%= link_to "Logs", logs_path %>
+        <p><%= link_to "Filmes", movies_path %></p>
+        <p><%= link_to "Atores", actors_path %></p>
+        <p><%= link_to "Comentários para Aprovação", comments_path %></p>
+        <p><%= link_to "Exibir Logs de comentários", logs_path %></p>
     </nav>
  </header>
 <style>
     nav {
+        display:flex;
         gap:2rem;
+        background-color:#D2B4DE;
+        padding:0 1rem;
+    }
+    nav p > a{
+         text-decoration: none;
+         color: #900C3F ;
     }
 </style>

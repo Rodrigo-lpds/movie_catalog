@@ -5,13 +5,19 @@
 <div id="logs">
    <% @logs.each do |log| %>
         <div>
-            <p>Comentário: <%= log.comment.text.truncate(40)%></p>
-            <p> Aprovado na data:
-                <%= log.approved_date %>
-            <p>
-            <p> Comentário do filme:
-                <%= log.comment.movie.title %>
-            </p>
+            <p> <strong> Comentário:</strong> <%= log.comment.text.truncate(40)%></p>
+            <ul>
+                <li> 
+                    <p> Aprovado na data:
+                        <%= log.approved_date %>
+                    <p>
+                </li>
+                <li>
+                <p> Comentário do filme:
+                    <%= log.comment.movie.title %>
+                </p>
+                </li>
+            </ul>
         </div>
     <% end %>
 </div>

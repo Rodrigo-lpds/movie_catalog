@@ -12,6 +12,21 @@
 
   <body>
     <%= render 'layouts/menu' %>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>
+<style>
+body{
+  margin: 0 auto;
+  background-color:#F5EEF8;
+}
+.content{
+  padding: 1rem;
+  color: #273746;
+}
+h1,h2,h3,h4,h5{
+  
+}
+</style>

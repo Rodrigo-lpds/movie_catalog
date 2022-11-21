@@ -1,17 +1,20 @@
 <div id="<%= dom_id actor %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Nome:</strong>
     <%= actor.name %>
   </p>
-
-  <p>
-    <strong>Birth date:</strong>
-    <%= actor.birth_date %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= actor.email %>
-  </p>
-
+  <ul>
+    <li>
+      <p>
+        <strong>Ano de Nascimento:</strong>
+        <%= actor.birth_date %>
+      </p> 
+    </li>
+    <li>
+      <p>
+        <strong>Email:</strong>
+        <%= actor.email %>
+      </p>
+    </li>
+  </ul>
 </div>
