@@ -17,4 +17,12 @@
       </p>
     </li>
   </ul>
+  <% if actor.movies.present? %>
+    <h3> Participação nos filmes:</h3>
+    <ul>
+      <% actor.movies.each do |movie| %>
+        <li> <strong> <%= movie.title %> </strong> </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

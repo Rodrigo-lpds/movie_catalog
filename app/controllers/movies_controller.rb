@@ -1,11 +1,14 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[show edit update destroy]
+  before_action :set_movie, only: %i[show edit update destroy add_actor_to_cast]
 
   def index
     @movies = Movie.all
   end
 
-  def show; end
+  def show
+    movie_actors_ids = @movie.actors.pluck(:id)
+    @available_actors = Actor.where.not(id: movie_actors_ids)
+  end
 
   def new
     @movie = Movie.new
@@ -43,6 +46,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def add_actor_to_cast
+    respond_to do |format|
+      if Cast.create(movie_id: @movie.id, actor_id: params[:actor_id])
+        format.html { redirect_to movie_url(@movie), notice: 'Ator adicionado com sucesso' }
+      else
+        format.html { render :show, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def set_movie
@@ -50,6 +63,6 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :release_year)
+    params.require(:movie).permit(:title, :release_year, :actor_id)
   end
 end

@@ -5,7 +5,7 @@
 <div>
   <%= link_to "Back to comments", comments_path %>
   <%= form_with(model: @comment) do |form| %>
-   <%=  form.hidden_field :status, value: true %>   
+    <%= form.hidden_field :status, value: true %>   
     <%= form.submit "Aprovar Comentário"%>
   <% end %>
 </div>

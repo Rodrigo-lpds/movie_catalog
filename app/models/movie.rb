@@ -3,5 +3,6 @@ class Movie < ApplicationRecord
   validates :title, uniqueness: true
   # validates :release_year, comparison: { less_than:2022 }
   has_many :comments
-  has_one :cast
+  has_many :casts, dependent: :delete_all
+  has_many :actors, through: :casts
 end

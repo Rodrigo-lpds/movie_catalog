@@ -8,5 +8,20 @@
     <strong>Ano de Lançamento:</strong>
     <%= movie.release_year %>
   </p>
-
+  
+  <p>
+    <strong>Elenco de atores:</strong>
+    <ul>
+      <% movie.actors.each do |actor|%>
+        <li> <%= actor.name %> </li>
+      <% end %>
+    </ul>
+  </p>
+  <% if @available_actors.present? %>
+    <%= form_with url: add_actor_to_cast_path, method: :post do |form| %>
+      <%= form.select :actor_id, @available_actors.pluck(:name  , :id) %>
+      <%= form.hidden_field :id, value: @movie.id %>  
+      <%= form.submit "Adicionar novo ator ao Elenco"%>
+    <% end %>
+  <% end %>
 </div>
