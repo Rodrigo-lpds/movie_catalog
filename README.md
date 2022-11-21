@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is the CESAR inova.acao Afro Bootcamp and simulates a movie catalog iteration with the features of adding movies, adding actors, adding comments(reviews) to the movies, and one log to store approved comments.
+This application is the second project of CESAR inova.acao Afro Bootcamp and simulates a movie catalog iteration with the features of adding movies, adding actors, adding comments(reviews) to the movies, and one log to store approved comments.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ This project currently works with:
 
 ## Usage
 
-If the environment it's appropriately configured just run the following to start the server:
+If the environment it's appropriately configured, just run the following to start the server:
 
 ```
 rails server
