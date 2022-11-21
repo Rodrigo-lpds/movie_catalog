@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+    @movies = Movie.all
   end
 
   def edit; end

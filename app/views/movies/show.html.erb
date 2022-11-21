@@ -1,12 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
+<h2> Detalhes do Filme </h3>
 <%= render @movie %>
 
-<%= @movie.comments %>
+<h3> Comentários do Filme: </h3>
+<% @movie.comments.approved_comments.each do |comment| %>
+  <h4> Comentário: </h4>
+  <p> <%= comment.text %> </p>
+  
+<% end %>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <p> <%= link_to "Editar este filme", edit_movie_path(@movie) %> </p>
+  <p> <%= link_to "Voltar para a seção de filmes", movies_path %> </p>
+  <p> <%= button_to "Apagar este filme", @movie, method: :delete %> </p>
 </div>
