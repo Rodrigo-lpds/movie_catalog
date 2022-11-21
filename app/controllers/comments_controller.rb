@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comments_path, notice: 'Comentário foi aprovado com sucesso.' }
+        format.html { redirect_to comments_path, notice: 'Comentário foi criado com sucesso.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: 'Comment was successfully updated.' }
+        format.html { redirect_to comments_path, notice: 'Comentário foi aprovado com sucesso.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

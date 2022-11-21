@@ -12,18 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :text, style: "display: block" %>
+    <%= form.label :text, "Crítica", style: "display: block" %>
     <%= form.text_area :text %>
   </div>
 
   <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.check_box :status %>
-  </div>
-
-  <div>
-    <%= form.label :movie_id, style: "display: block" %>
-    <%= form.text_field :movie_id %>
+    <%= form.label :movie_id, "Filme", style: "display: block" %>
+    <%= form.select :movie_id, @movies.pluck(:title, :id) %>
   </div>
 
 
