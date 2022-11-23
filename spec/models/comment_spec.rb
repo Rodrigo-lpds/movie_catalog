@@ -34,5 +34,11 @@ RSpec.describe Comment, type: :model do
   end
 
   describe 'Instance Methods' do
+    it 'save_to_logs' do
+      comment = create(:comment, movie_id: @movie.id)
+      comment.update(status: true)
+
+      expect(comment.log).to eql(Log.last)
+    end
   end
 end
