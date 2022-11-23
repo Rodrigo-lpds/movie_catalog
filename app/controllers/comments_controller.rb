@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
 
   def index
-    @comments = Comment.not_approved_comments
+    @comments = Comment.not_approved
   end
 
   def show; end
