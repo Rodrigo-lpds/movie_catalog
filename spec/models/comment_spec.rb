@@ -26,6 +26,11 @@ RSpec.describe Comment, type: :model do
       comment = create(:comment, status: false, movie_id: @movie.id)
       expect(Comment.not_approved.find_by(id: comment.id)).to be_present
     end
+
+    it 'with approved comments' do
+      comment = create(:comment, status: true, movie_id: @movie.id)
+      expect(Comment.approved.find_by(id: comment.id)).to be_present
+    end
   end
 
   describe 'Instance Methods' do
