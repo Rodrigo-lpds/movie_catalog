@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   validates :text, presence: true
   belongs_to :movie
 
-  scope :not_approved_comments, -> { where(status: [false, nil]) }
+  scope :not_approved_comments, -> { where(status: false) }
   scope :approved_comments, -> { where(status: true) }
 
   def save_to_logs
