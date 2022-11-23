@@ -10,6 +10,6 @@ class Comment < ApplicationRecord
   has_one :log
 
   def save_to_logs
-    Log.create(approved_date: Time.now.strftime('%d-%m-%Y'), comment_id: id) if status == true
+    Log.create(approved_date: Time.now.strftime('%d-%m-%Y'), comment_id: id) if log.blank?
   end
 end

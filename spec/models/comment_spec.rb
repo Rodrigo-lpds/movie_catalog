@@ -38,7 +38,7 @@ RSpec.describe Comment, type: :model do
       comment = create(:comment, movie_id: @movie.id)
       comment.update(status: true)
 
-      expect(comment.log).to eql(Log.last)
+      expect(Log.find_by(comment_id: comment.id)).to be_present
     end
   end
 end
