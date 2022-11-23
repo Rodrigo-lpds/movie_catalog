@@ -7,6 +7,8 @@ class Comment < ApplicationRecord
   scope :not_approved, -> { where(status: false) }
   scope :approved, -> { where(status: true) }
 
+  has_one :log
+
   def save_to_logs
     Log.create(approved_date: Time.now.strftime('%d-%m-%Y'), comment_id: id) if status == true
   end
