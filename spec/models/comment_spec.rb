@@ -22,5 +22,12 @@ RSpec.describe Comment, type: :model do
   end
 
   describe 'Scope' do
+    it 'with not approved comments' do
+      comment = create(:comment, status: false, movie_id: @movie.id)
+      expect(Comment.not_approved.find_by(id: comment.id)).to be_present
+    end
+  end
+
+  describe 'Instance Methods' do
   end
 end
